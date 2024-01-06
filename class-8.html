@@ -45,7 +45,10 @@
 
 
                 $('p').click(function () {
-                    $(this).css('background-color', 'red');
+                    $(this).css({
+                        'background-color': 'red',
+                        'font-weight': 'bold'
+                    });
                 });
 
             });
