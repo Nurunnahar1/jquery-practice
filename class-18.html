@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Catch Criminals</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-2 mb-5"></div>
+            <div class="col-md-8">
+
+                <h1></h1>
+                <input type="text" id="username">
+                <input type="password" id="password">
+               <button class="btn btn-success" id="submit">Submit</button>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        (function ($) {
+            $(document).ready(function () {
+                let username , password ;
+               $('input#submit').click(function(){
+                    username = $('input#username').val();
+                    password = $('input#password').val();
+
+                    if(username == '' || password == ''){
+                        $('h1').html('<span style="color:red;"> Field must not be empty!</span>');
+                        
+                        let cls = setInterval(function(){
+                            $('h1').html('<span style="color:red;"> Field must not be empty!</span>');
+                            clearInterval(cls);
+                            
+                        }, 2000);
+                    }else{
+                        
+                        $('h1').html('<span style="color:green;"> Data stable</span>');
+                    }
+               });
+
+            });
+        })(jQuery);
+    </script>
+</body>
+
+</html>
